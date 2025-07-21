@@ -1,0 +1,17 @@
+ALTER TABLE `users` ADD `role_id` INT UNSIGNED NULL DEFAULT NULL AFTER `email`;
+
+CREATE TABLE `roles` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `roles`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+INSERT INTO `roles` (`id`, `name`) VALUES (NULL, 'admin'), (NULL, 'member');
+
+UPDATE `users` SET `role_id` = '1', `email_verified_at` = NULL WHERE `users`.`id` = 1; UPDATE `users` SET `role_id` = '2', `email_verified_at` = NULL WHERE `users`.`id` = 2; UPDATE `users` SET `role_id` = '2', `email_verified_at` = NULL WHERE `users`.`id` = 3;

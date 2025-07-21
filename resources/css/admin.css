@@ -1,0 +1,246 @@
+
+table {
+    width: 100%;
+}
+tr {
+    border-top: 1px solid #ccc;
+}
+td {
+    padding: 12px;
+    font-size: 20px;
+    text-align: left;
+}
+.form-group label {
+    line-height: 37px;
+}
+.card-header {
+    color: #fff;
+    background-color: #333333;
+}
+.form-group {
+    margin: 0rem;
+}
+.button {
+    color: white;
+    padding: 5px 25px;
+}
+.button:hover {
+    color: white;
+    padding: 5px 25px;
+}
+/* .form-group input, .form-group select {
+    width: 100% !important;
+}
+.form-group label {
+    width: 100% !important;
+    text-align: inherit !important;
+} */
+.admin li {
+    list-style: none;
+}
+.header_admin_title {
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.header_admin_title h4 {
+  margin-bottom:0;
+}
+  .card-title {
+    margin-bottom: .75rem;
+    background: #e43750;
+    padding: 10px;
+    color: #fff;
+}
+
+p.card-text {
+    padding: 10px;
+}
+.card-body a {
+    margin-bottom: .5rem !important;
+}
+.card-body {
+    text-align: center!important;
+    padding: 10px;
+}
+.footer_wrapper.text-white, div#rightslide {
+    display: none;
+}
+.form-group {
+    width: 100%;
+    display: inline-block;
+}
+.form-group input, .form-group select  {
+    width: 50%;
+    float:left;
+    text-align: left;
+}
+.form-group label{
+  width: 30% !important;
+  float:left;
+    text-align: right;
+    padding-right: 15px;
+}
+.offlineuser label, .offlineuser input, .offlineuser select{
+    text-align: left !important;
+    float:inherit !important;
+    width: 100% !important;
+}
+.offlineuserselect label{
+    width: 20px !important;
+}
+.register-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.offlineuser select{
+    border-bottom: 1px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    line-height: 37px;
+    padding-left: 20px;
+}
+.table {
+    width: 100%;
+}
+tr {
+    border-top: 1px solid #ccc;
+}
+td {
+    padding: 12px;
+    font-size: 20px;
+}
+.form-group label {
+    line-height: 37px;
+}
+.card-header {
+    color: #fff;
+    background-color: #333333;
+}
+.form-group {
+    margin: 0rem;
+}
+.button {
+    color: white;
+    padding: 5px 25px;
+}
+.button:hover {
+    color: white;
+    padding: 5px 25px;
+}
+/* .form-group input, .form-group select {
+    width: 100% !important;
+}
+.form-group label {
+    width: 100% !important;
+    text-align: inherit !important;
+} */
+.admin li {
+    list-style: none;
+}
+.header_admin_title {
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.header_admin_title h4 {
+  margin-bottom:0;
+}
+  .card-title {
+    margin-bottom: .75rem;
+    background: #333333;;
+    padding: 10px;
+    color: #fff;
+}
+
+p.card-text {
+    padding: 10px;
+}
+.card-body a {
+    margin-bottom: .5rem !important;
+}
+.card-body {
+    text-align: center!important;
+    padding: 10px;
+}
+.footer_wrapper.text-white, div#rightslide {
+    display: none;
+}
+.form-group {
+    width: 100%;
+    display: inline-block;
+}
+.form-group input, .form-group select  {
+    width: 50%;
+    float:left;
+    text-align: left;
+}
+.form-group label{
+  width: 30% !important;
+  float:left;
+    text-align: right;
+    padding-right: 15px;
+}
+.offlineuser label, .offlineuser input, .offlineuser select{
+    text-align: left !important;
+    float:inherit !important;
+    width: 100% !important;
+}
+.offlineuser input, .offlineuser select{
+    width: 100% !important;
+}
+.offlineuser label{
+    width: 10px !important;
+}
+.offlineuserselect label{
+    width: 20px !important;
+}
+.register-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.offlineuser select{
+    border-bottom: 1px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    line-height: 37px;
+    padding-left: 20px;
+}
+.offlineuser select{
+border-bottom: 1px solid #999;
+}
+.offlineuser input:focus, .offlineuser select:focus {
+    outline: none !important;
+}
+
+.offlineuserselect label, .offlineuserselect select {
+padding-bottom: 7px;
+}
+
+
+ @media only screen and (max-width: 600px) {
+.admin li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+div#app {
+    max-width: 100%;
+    overflow: inherit !important;
+}
+
+    }
