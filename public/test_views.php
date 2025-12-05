@@ -27,22 +27,33 @@ try {
     echo "<p>✓ Kernel created</p>";
     flush();
     
-    echo "<p>3. Skipping bootstrap (causes hang) - testing direct DB access...</p>";
+    echo "<p>3. Testing without full bootstrap...</p>";
     flush();
     
-    // Skip the bootstrap that hangs, test database directly
-    // $request = Illuminate\Http\Request::capture();
-    // $kernel->bootstrap();
+    // Load .env manually
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/..');
+    $dotenv->load();
     
-    echo "<p>✓ Application bootstrapped</p>";
+    echo "<p>✓ Environment loaded</p>";
     flush();
     
-    echo "<p>4. Testing database...</p>";
+    echo "<p>4. Testing database connection...</p>";
     flush();
     
-    // Test database connection
-    $categories = \DB::table('categories')->count();
-    echo "<p>✓ Database connected: $categories categories found</p>";
+    // Test database with PDO directly
+    $host = env('DB_HOST', 'localhost');
+    $db = env('DB_DATABASE');
+    $user = env('DB_USERNAME');
+    $pass = env('DB_PASSWORD');
+    
+    try {
+        $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+        $stmt = $pdo->query("SELECT COUNT(*) FROM categories");
+        $count = $stmt->fetchColumn();
+        echo "<p>✓ Database connected: $count categories found</p>";
+    } catch (PDOException $e) {
+        echo "<p style='color:red;'>✗ Database error: " . $e->getMessage() . "</p>";
+    }
     flush();
     
     echo "<p>5. Checking view files...</p>";
