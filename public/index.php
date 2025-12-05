@@ -7,6 +7,9 @@
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 
+// Hide deprecation warnings for PHP 8.4 (Laravel 10 was built for PHP 8.2)
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+
 define('LARAVEL_START', microtime(true));
 
 /*
