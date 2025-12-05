@@ -3,7 +3,8 @@
 // Upload to: /home/littleprodigy/public_html/public/
 // DELETE after viewing error!
 
-error_reporting(E_ALL);
+// Hide deprecation warnings from PHP 8.4
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
