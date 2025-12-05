@@ -6,12 +6,15 @@ ini_set('display_errors', 1);
 require __DIR__.'/../vendor/autoload.php';
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
+use Illuminate\Support\Facades\DB;
+
 echo "<!DOCTYPE html><html><body style='font-family:Arial;padding:20px;'>";
 echo "<h2>Testing View Rendering</h2>";
 
 try {
     $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
     $request = Illuminate\Http\Request::capture();
+    $kernel->bootstrap();
     
     echo "<p>✓ Laravel loaded</p>";
     
