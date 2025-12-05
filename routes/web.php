@@ -49,13 +49,13 @@ Route::get('/password/reset', [App\Http\Controllers\Auth\ForgotPasswordControlle
 Route::post('/password/email', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('/password/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('/password/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
-Route::get('/email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-Route::get('/email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
-Route::get('/email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+Route::get('/email/verify', [App\Http\Controllers\Auth\VerificationController::class, 'show'])->name('verification.notice');
+Route::get('/email/verify/{id}', [App\Http\Controllers\Auth\VerificationController::class, 'verify'])->name('verification.verify');
+Route::get('/email/resend', [App\Http\Controllers\Auth\VerificationController::class, 'resend'])->name('verification.resend');
 
-Route::get('/', 'HomeContentsController@viewCategories');
-Route::get('/home', 'HomeContentsController@viewCategories');
-Route::get('home-data', 'HomeContentsController@getMoreCategories');
+Route::get('/', [App\Http\Controllers\HomeContentsController::class, 'viewCategories']);
+Route::get('/home', [App\Http\Controllers\HomeContentsController::class, 'viewCategories']);
+Route::get('home-data', [App\Http\Controllers\HomeContentsController::class, 'getMoreCategories']);
 Route::get('/test', 'ProductController@mailTest');
 
 Route::get('/register-offline-users', function() { return view('registerOffline'); });
