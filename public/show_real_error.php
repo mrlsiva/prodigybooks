@@ -3,10 +3,7 @@
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
 ini_set('display_errors', 1);
 
-echo "<!DOCTYPE html><html><body style='font-family:monospace;padding:20px;background:#1e1e1e;color:#fff;'>";
-echo "<h1>🔍 Laravel Error Detection</h1>";
-
-// Capture output
+// Start output buffering FIRST
 ob_start();
 
 try {
@@ -20,6 +17,13 @@ try {
     
     $content = $response->getContent();
     $statusCode = $response->getStatusCode();
+    
+    // Get any buffered output
+    $buffer = ob_get_clean();
+    
+    // Now we can echo safely
+    echo "<!DOCTYPE html><html><body style='font-family:monospace;padding:20px;background:#1e1e1e;color:#fff;'>";
+    echo "<h1>🔍 Laravel Error Detection</h1>";
     
     echo "<h2>Response Status: <span style='color:".($statusCode == 200 ? '#0f0' : '#f00')."'>$statusCode</span></h2>";
     echo "<h3>Content Length: " . strlen($content) . " bytes</h3>";
@@ -54,6 +58,11 @@ try {
     $kernel->terminate($request, $response);
     
 } catch (\Throwable $e) {
+    // Get any buffered output
+    $buffer = ob_get_clean();
+    
+    echo "<!DOCTYPE html><html><body style='font-family:monospace;padding:20px;background:#1e1e1e;color:#fff;'>";
+    echo "<h1>🔍 Laravel Error Detection</h1>";
     echo "<div style='background:#ff0000;color:#fff;padding:20px;margin:20px 0;'>";
     echo "<h2>💥 EXCEPTION CAUGHT!</h2>";
     echo "<h3>Error: " . htmlspecialchars($e->getMessage()) . "</h3>";
@@ -64,10 +73,11 @@ try {
     echo htmlspecialchars($e->getTraceAsString());
     echo "</pre>";
     echo "</div>";
+    
+    if ($buffer) {
+        echo "<h3>📝 Buffered Output:</h3>";
+        echo "<pre style='background:#000;padding:10px;'>" . htmlspecialchars($buffer) . "</pre>";
+    }
+    echo "</body></html>";
 }
 
-$output = ob_get_clean();
-echo $output;
-
-echo "</body></html>";
-?>
