@@ -2,10 +2,10 @@
 
 @section('content')
 <!-- Font Icon -->
-<link rel="stylesheet" href="{{ url('/resources/fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+<link rel="stylesheet" href="{{ url('/fonts/material-icon/css/material-design-iconic-font.min.css') }}">
 
 <!-- Main css -->
-<link rel="stylesheet" href="{{ url('/resources/css/login.css') }}">
+<link rel="stylesheet" href="{{ url('/css/login.css') }}">
  <style>.form-group {width: 100%; padding: 0; margin: 0; }</style>
  <div class="container">
     <div class="row justify-content-center">
@@ -34,7 +34,7 @@
     <div class="container">
         <div class="signin-content">
             <div class="signin-image mt-5">
-                <figure><img src="{{ url('/resources/images/login.png') }}" alt="sing up image"></figure>
+                <figure><img src="{{ url('/images/login.png') }}" alt="sing up image"></figure>
                 <a href="{{ url('/register') }}" class="signup-image-link">Not Registered ? <span style="color:#e43750">Create a new account</span></a>
             </div>
 
@@ -101,8 +101,8 @@
 </div>
 
 <!-- JS -->
-<script src="{{ url('/resources/vendor/jquery/jquery.min.js') }}"></script>
-<script src="{{ url('/resources/js/main.js') }}"></script>
+<script src="{{ url('/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ url('/js/main.js') }}"></script>
 
 <script type="text/javascript">
     $("#continue-login").on('click', function(){

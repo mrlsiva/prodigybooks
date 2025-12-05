@@ -13,7 +13,7 @@
     <div align="center" style="width: 100%; overflow: hidden;">
         <div style="max-width: 680px; width: 100%; margin-top: 5px;">
             <div>
-                <img src="https://littleprodigybooks.in/resources/img/logo.png" style="width: 100%; max-width:250px" alt="" border="0 " />
+                <img src="https://littleprodigybooks.in/img/logo.png" style="width: 100%; max-width:250px" alt="" border="0 " />
             </div>
             <div style="background-color: #fbfcfd; border-top: thick double #cccccc; text-align: left; width: 100%;">
                 <div style="padding: 20px; width: 100%;">

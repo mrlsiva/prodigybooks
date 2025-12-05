@@ -41,7 +41,7 @@
                                 <td>{{$value->sku}}</td> 
                                 
 
-                                <td> <img src="{{url('/storage/app/public/uploads/img/'.$selectedCategory->series_table_name.'/thumb/'.$value->thumb_img)}}" width="100" height="100"/> </td>
+                                <td> <img src="{{url('/storage/uploads/img/'.$selectedCategory->series_table_name.'/thumb/'.$value->thumb_img)}}" width="100" height="100"/> </td>
 
                                 <td> <a href="{{url('read-book/'.$value->categories_id.'/'.$value->sku)}}"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
 

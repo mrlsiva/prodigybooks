@@ -9,7 +9,7 @@
       <div class="card person-card">
          <div class="card-body">
             <!-- Sex image -->
-            <img id="img_sex" class="person-img" src="{{ url('/resources/img/king.png') }}">
+            <img id="img_sex" class="person-img" src="{{ url('/img/king.png') }}">
             <div class="container text-center mb-4">
                <h2 id="who_message" class="card-title">The <span id="box-title">King</span>’s Box</h2>
                <p>You Can Chose Upto <span id="box-books">10</span> Books</p>
@@ -56,7 +56,7 @@
           @php $table = $dat['table']; @endphp
           @foreach($dat['products'] as $pro)
           <a class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-2 mt-2 pl-1 pr-1 box_select {{ $table }}" data-bookid="{{ $pro->id }}" data-catid="{{ $dat['cat_id'] }}">
-            <img src="{{ 'https://littleprodigybooks.in/storage/app/public/uploads/img/'.$table.'/thumb/'.$pro->thumb_img }}" class="img-responsive"/>
+            <img src="{{ 'https://littleprodigybooks.in/storage/uploads/img/'.$table.'/thumb/'.$pro->thumb_img }}" class="img-responsive"/>
             <p class="mb-2 mt-2 show_one_line text-center">{{ $pro->book_title }}</p>
           </a>
           @endforeach
@@ -68,10 +68,10 @@
 
 <script>
    // URLs images
-   var king = "{{ url('/resources/img/king.png') }}";
-   var queen = "{{ url('/resources/img/queen.png') }}";
-   var knight = "{{ url('/resources/img/knight.png') }}";
-   var warden = "{{ url('/resources/img/warden.png') }}";
+   var king = "{{ url('/img/king.png') }}";
+   var queen = "{{ url('/img/queen.png') }}";
+   var knight = "{{ url('/img/knight.png') }}";
+   var warden = "{{ url('/img/warden.png') }}";
    
    // On page loaded
    $( document ).ready(function() {  

@@ -4,9 +4,9 @@
    <div class="row">
        @include('includes.carousal-ebook')
    </div>
-   <div class="row day openstatus"><img src="{{url('resources/img/our-e-series/table_top_day.jpg')}}" class="img-fluid">  </div>
-   <div class="row cloud openstatus"><img src="{{url('resources/img/our-e-series/table_top.jpg')}}" class="img-fluid">  </div>
-   <div class="row night openstatus"><img src="{{url('resources/img/our-e-series/table_top_night.jpg')}}" class="img-fluid">  </div>
+   <div class="row day openstatus"><img src="{{url('img/our-e-series/table_top_day.jpg')}}" class="img-fluid">  </div>
+   <div class="row cloud openstatus"><img src="{{url('img/our-e-series/table_top.jpg')}}" class="img-fluid">  </div>
+   <div class="row night openstatus"><img src="{{url('img/our-e-series/table_top_night.jpg')}}" class="img-fluid">  </div>
 
    <div class="row e_series_bg">
    <div class="container">
@@ -21,14 +21,14 @@
                   <div class="col-6"> <a class="white_text" href="ebook/{{$value->series_table_name}}">{{$value->series_name}} </a> </div>
                   <div class="col-1"> {{$value->no_of_books}}  </div>
                   <div class="col-2"> {{$value->age_group}}  </div>
-                  <div class="col-1 open"> <a class="collapsed" data-toggle="collapse" href="#collapseOne{{$value->id}}"> <img src="{{url('resources/img/our-e-series/002-plus.png')}}" class="img-fluid">  </a>  </div>
+                  <div class="col-1 open"> <a class="collapsed" data-toggle="collapse" href="#collapseOne{{$value->id}}"> <img src="{{url('img/our-e-series/002-plus.png')}}" class="img-fluid">  </a>  </div>
                   
                 </div> 
               </div>
             <div id="collapseOne{{$value->id}}" class="card-body collapse" data-parent="#accordion" >
                 <div class="card-title m-0 pt-2 pb-2 row">
                   <!-- <div class="col-3">  <img src="https://littleprodigybooks.s3.ap-south-1.amazonaws.com/img/{{$value->series_table_name}}/{{$value->series_table_name}}.png" class="img-fluid" > </div> -->
-                  <div class="col-3">  <img src="storage/app/public/uploads/img/{{$value->series_table_name}}/{{$value->series_table_name}}.png" class="img-fluid" > </div>
+                  <div class="col-3">  <img src="/storage/uploads/img/{{$value->series_table_name}}/{{$value->series_table_name}}.png" class="img-fluid" > </div>
                   
                   <div class="col-9">
 					  <div class="col-12"> <p>{{$value->series_desc}} </p> </div>
@@ -43,9 +43,9 @@
           </div>
     </div>
 </div>
-<div class="row day openstatus"><img src="{{url('resources/img/our-e-series/table_bottom_day.jpg')}}" class="img-fluid">  </div>
-<div class="row cloud openstatus"><img src="{{url('resources/img/our-e-series/table_bottom.jpg')}}" class="img-fluid">  </div>
-<div class="row night openstatus"><img src="{{url('resources/img/our-e-series/table_bottom_night.jpg')}}" class="img-fluid">  </div>
+<div class="row day openstatus"><img src="{{url('img/our-e-series/table_bottom_day.jpg')}}" class="img-fluid">  </div>
+<div class="row cloud openstatus"><img src="{{url('img/our-e-series/table_bottom.jpg')}}" class="img-fluid">  </div>
+<div class="row night openstatus"><img src="{{url('img/our-e-series/table_bottom_night.jpg')}}" class="img-fluid">  </div>
 
 
 @if (isset($plan) && $plan->id)
@@ -62,7 +62,7 @@
 
 <div class="columns col-right">
   <ul class="price">
-   <li class="rounded-circle mt-5 mb-5"> <span  class=""><img class="fa fa-feather-alt " src="resources/img/our-e-series/feather.png" aria-hidden="true"></span> </li>
+   <li class="rounded-circle mt-5 mb-5"> <span  class=""><img class="fa fa-feather-alt " src="{{url('img/our-e-series/feather.png')}}" aria-hidden="true"></span> </li>
     <li class="header">Basic</li>
     <li class="grey"><span>&#8377;</span> 500 </li>
     <li>Get Plan For One Year</li>
@@ -82,7 +82,7 @@
 <div class="col-6 text-left">
 <div class="columns col-left">
   <ul class="price">
-  <li class="rounded-circle mt-5 mb-5"> <span  class=""><img class="fa fa-feather-alt " src="resources/img/our-e-series/diamond.png" aria-hidden="true"></span> </li>
+  <li class="rounded-circle mt-5 mb-5"> <span  class=""><img class="fa fa-feather-alt " src="{{url('img/our-e-series/diamond.png')}}" aria-hidden="true"></span> </li>
     <li class="header">Advance</li>
     <li class="grey"><span>&#8377;</span> 700 </li>
     <li>Get Plan For Two Year</li>
@@ -105,16 +105,16 @@
 <div class="row mt-4 abtus text-center">
 
 <a class="dropdown-item" href="#chooseplan">
-<img src="{{url('/resources/img/our-e-series/Layout-01.jpg')}}" class="img-responsive">
+<img src="{{url('/img/our-e-series/Layout-01.jpg')}}" class="img-responsive">
 </a>
 
    </div>
 @endif
 <div class="container mt-4 abtus text-center">
-<a target="_blank" href="{{ url('/resources/pdf/Our-Library-Catalogue.pdf') }}"  class='button e-series-book mb-4'><span>View Our E-Book Catalogue </span></a>
+<a target="_blank" href="{{ url('/pdf/Our-Library-Catalogue.pdf') }}"  class='button e-series-book mb-4'><span>View Our E-Book Catalogue </span></a>
 <br>
-<a class="dropdown-item mt-3" target="_blank" href="{{ url('/resources/pdf/Our-Library-Catalogue.pdf') }}">
-<img src="{{url('/resources/img/our-e-series/Layout-02.jpg')}}" class="img-responsive">
+<a class="dropdown-item mt-3" target="_blank" href="{{ url('/pdf/Our-Library-Catalogue.pdf') }}">
+<img src="{{url('/img/our-e-series/Layout-02.jpg')}}" class="img-responsive">
 </a>
    </div>
 

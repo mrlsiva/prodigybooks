@@ -64,7 +64,7 @@
 <link href="{{url('resources/css/datatables.min.css')}}" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <!-- MDBootstrap Datatables  -->
-<script type="text/javascript" src="{{url('resources/js/datatables.min.js')}}"></script>
+<script type="text/javascript" src="{{url('js/datatables.min.js')}}"></script>
 <script>
     $(document).ready(function () {
   $('#dtBasicExample').DataTable();

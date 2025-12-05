@@ -10,13 +10,13 @@ div#pages {
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 <link rel="stylesheet" type="text/css" href="{{ url('resources/css/flipbook.style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url('resources/css/font-awesome.css') }}">
-<script src="{{ url('resources/js/flipbook.min.js?v1') }}"></script>
+<script src="{{ url('js/flipbook.min.js?v1') }}"></script>
 </head>
 <body onselectstart="return false">
 <div id="container">	
 	<input type="hidden" id="base_url" value="{{ url('storage/app/public/uploads/img/trialbooks/books/'.$book_path) }}"/>	
 	<input type="hidden" id="book" value="{{$book_path}}"/>	
-    <img src= "{{ url('storage/app/public/uploads/img/trialbooks/thumb/'.$thumb_img) }}"/>
+    <img src= "{{ url('storage/uploads/img/trialbooks/thumb/'.$thumb_img) }}"/>
     <div id="pages">      
 	    <?php
 			$dirname = storage_path('app/public/uploads/img/trialbooks/books/'.$book_path);

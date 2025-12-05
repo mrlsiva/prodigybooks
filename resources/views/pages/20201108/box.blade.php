@@ -55,7 +55,7 @@
             <div class="card-body">
                 <!-- Sex image -->
                 
-                <img id="img_sex" class="person-img" src="{{ url('/resources/img/king.png') }}">
+                <img id="img_sex" class="person-img" src="{{ url('/img/king.png') }}">
                 
                 <div class="container text-center mb-4">
                     <h2 id="who_message" class="card-title">The King’s Box</h2>
@@ -188,8 +188,8 @@ $(".box a").click(function() {
 </script>
    <script>
 // URLs images
-var king_img = "{{ url('/resources/img/king.png') }}";
-var male_img = "{{ url('/resources/img/queen.png') }}";
+var king_img = "{{ url('/img/king.png') }}";
+var male_img = "{{ url('/img/queen.png') }}";
 
 // On page loaded
 $( document ).ready(function() {

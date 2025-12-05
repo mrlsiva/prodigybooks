@@ -2,7 +2,7 @@
 @section('content')
 <div class="container main">
 <link rel="stylesheet" href="{{ url('/resources/fonts/material-icon/css/material-design-iconic-font.min.css') }}">
-<link rel="stylesheet" href="{{ url('/resources/css/login.css') }}">
+<link rel="stylesheet" href="{{ url('/css/login.css') }}">
 <section class="signup">
     <div class="container">
         <div class="signup-content">
@@ -66,6 +66,6 @@
 
 </section>
 <script src="{{ url('/resources/vendor/jquery/jquery.min.js') }}"></script>
-<script src="{{ url('/resources/js/main.js') }}"></script>
+<script src="{{ url('/js/main.js') }}"></script>
 </div>
 @endsection

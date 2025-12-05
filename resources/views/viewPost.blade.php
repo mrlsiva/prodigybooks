@@ -16,7 +16,7 @@
         <div class="col-8">   
             <!-- {{ $blogData }} -->
             <h3 class="blog_title">{{ $blogData->title }}</h3>
-            <div class="fakeimg"><img src="{{url('/')}}/resources/img/blog.jpg" class="img-fluid" /></div>
+            <div class="fakeimg"><img src="{{url('/')}}/img/blog.jpg" class="img-fluid" /></div>
             <div class="card-body">
                 @if (session('status'))
                     <div class="alert alert-success" role="alert">
@@ -80,7 +80,7 @@
             </div>
             <div class="col-2 p-3" style="background: #ddd;">
              
-                <a href="javascript:void(0)" id='reply_{{$c}}' onclick="replyForm({{$c}},{{$a->id}})"><img style="width: 20px;" src="{{url('/resources/img/reload.png')}}"></a>
+                <a href="javascript:void(0)" id='reply_{{$c}}' onclick="replyForm({{$c}},{{$a->id}})"><img style="width: 20px;" src="{{url('/img/reload.png')}}"></a>
                 
             </div>
             <div class="col-8 reply-comment-{{$c}}" style="display: none;">

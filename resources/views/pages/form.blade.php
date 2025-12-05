@@ -27,19 +27,19 @@
 
     <meta content="https://www.facebook.com/littleprodigybooks" data-react-helmet="true" property="article:publisher">
 
-    <meta content="https://littleprodigybooks.in/resources/img/Share1.png" data-react-helmet="true" property="og:image">
+    <meta content="https://littleprodigybooks.in/img/Share1.png" data-react-helmet="true" property="og:image">
 
     <meta content="image/jpeg" data-react-helmet="true" property="og:image:type">
 
     <meta content="300" data-react-helmet="true" property="og:image:width">
 
     <meta content="300" data-react-helmet="true" property="og:image:height">
-    <meta property="og:image" content="https://littleprodigybooks.in/resources/img/Share1.png">
+    <meta property="og:image" content="https://littleprodigybooks.in/img/Share1.png">
 
     <title>Little Prodigy Books - The Online Book Store</title>
 
-    <link rel='icon' href="https://littleprodigybooks.in/resources/img/favicon.png" type='image/x-icon'>
-    <link rel="stylesheet" href="https://littleprodigybooks.in/resources/css/style.css?v1">
+    <link rel='icon' href="https://littleprodigybooks.in/img/favicon.png" type='image/x-icon'>
+    <link rel="stylesheet" href="https://littleprodigybooks.in/css/style.css?v1">
     <!-- load bootstrap from a cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -57,7 +57,7 @@
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-                    <a class="navbar-brand" href="https://littleprodigybooks.in/"><img src="https://littleprodigybooks.in/resources/img/logo.png" /></a>
+                    <a class="navbar-brand" href="https://littleprodigybooks.in/"><img src="https://littleprodigybooks.in/img/logo.png" /></a>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
 
                         <ul class="navbar-nav ml-auto">
@@ -72,7 +72,7 @@
             </a>
                                 <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="https://littleprodigybooks.in/aboutus">About Us</a>
-                                    <a class="dropdown-item" target="_blank" href="https://littleprodigybooks.in/resources/pdf/Our-Library-Catalogue.pdf">Our Library Catalogue</a>
+                                    <a class="dropdown-item" target="_blank" href="https://littleprodigybooks.in/pdf/Our-Library-Catalogue.pdf">Our Library Catalogue</a>
                                     <a class="dropdown-item" href="https://littleprodigybooks.in/our-distributers">Our Distributorship</a>
                                     <a class="dropdown-item" href="https://littleprodigybooks.in/our-publishing-partners">Our Publishing Partners</a>
                                 </div>
@@ -97,7 +97,7 @@
             </nav>
         </header>
         <div class="row mt-5">
-            <link rel="stylesheet" type="text/css" href="https://littleprodigybooks.in/resources/css/form.css">
+            <link rel="stylesheet" type="text/css" href="https://littleprodigybooks.in/css/form.css">
 
             <div class="cta-bgimg bgimage-property container-fluid">
 
@@ -182,10 +182,10 @@
                 </div>
 
             </div>
-            <link rel="stylesheet" type="text/css" href="https://littleprodigybooks.in/resources/css/common-contact-form/css/custom/style.css?v2">
-            <script type="text/javascript" src="https://littleprodigybooks.in/resources/css/common-contact-form/js/vendor/jquery.min.js"></script>
-            <script type="text/javascript" src="https://littleprodigybooks.in/resources/css/common-contact-form/js/vendor/validate/jquery.validate.min.js"></script>
-            <script type="text/javascript" src="https://littleprodigybooks.in/resources/css/common-contact-form/js/custom/custom.js"></script>
+            <link rel="stylesheet" type="text/css" href="https://littleprodigybooks.in/css/common-contact-form/css/custom/style.css?v2">
+            <script type="text/javascript" src="https://littleprodigybooks.in/css/common-contact-form/js/vendor/jquery.min.js"></script>
+            <script type="text/javascript" src="https://littleprodigybooks.in/css/common-contact-form/js/vendor/validate/jquery.validate.min.js"></script>
+            <script type="text/javascript" src="https://littleprodigybooks.in/css/common-contact-form/js/custom/custom.js"></script>
         </div>
         <!-- <footer class="row footerdesign">
             @include('includes.footer')

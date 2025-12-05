@@ -23,19 +23,19 @@
 
 <meta content="https://www.facebook.com/littleprodigybooks" data-react-helmet="true" property="article:publisher">
 
-<meta content="{{ url('/resources/img/Share1.png') }}" data-react-helmet="true" property="og:image">
+<meta content="{{ url('/img/Share1.png') }}" data-react-helmet="true" property="og:image">
 
 <meta content="image/jpeg" data-react-helmet="true" property="og:image:type">
 
 <meta content="300" data-react-helmet="true" property="og:image:width">
 
 <meta content="300" data-react-helmet="true" property="og:image:height">
-<meta property="og:image" content="{{ url('/resources/img/Share1.png') }}">
+<meta property="og:image" content="{{ url('/img/Share1.png') }}">
 
 <title>Little Prodigy Books - The Online Book Store</title>
 
-<link rel='icon' href="{{ url('/resources/img/favicon.png') }}" type='image/x-icon' >
-<link rel="stylesheet" href="{{ url('/resources/css/style.css?v1') }}">
+<link rel='icon' href="{{ url('/img/favicon.png') }}" type='image/x-icon' >
+<link rel="stylesheet" href="{{ url('/css/style.css?v1') }}">
 <!-- load bootstrap from a cdn -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

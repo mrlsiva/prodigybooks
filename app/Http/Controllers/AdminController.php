@@ -231,7 +231,7 @@ class AdminController extends Controller
     {
         
         // print_r($request['cat_banner']->getClientOriginalExtension());exit;
-        $base_url = "/resources/img/".$request['db_category'];
+        $base_url = "/img/".$request['db_category'];
         // dd($request,'Test',$base_url);
         DB::table('categories')->insert(
             ['series_name' => $request['cat_name'], 'series_table_name' => $request['db_category'],'series_desc' => $request['description'], 'age_group' => $request['age_group'], 'banner_img' => $request['cat_banner']]

@@ -4,7 +4,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
 <link rel="stylesheet" type="text/css" href="{{ url('resources/css/flipbook.style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url('resources/css/font-awesome.css') }}">
-<script src="{{ url('resources/js/flipbook.min.js?v1') }}"></script>
+<script src="{{ url('js/flipbook.min.js?v1') }}"></script>
 
 </head>
 <body>

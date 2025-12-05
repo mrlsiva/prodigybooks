@@ -71,7 +71,8 @@ class EBooksController extends Controller
                 return view('pages/e-book')
                 ->with('book_path', $getBook[0]->book_path)
                 ->with('thumb_img', $getBook[0]->thumb_img)
-                ->with('series_table_name', $getTable[0]->series_table_name);
+                ->with('series_table_name', $getTable[0]->series_table_name)
+                ->with('category_id', $getCategory);
             }
             else{
                 return redirect('/membership-plans');

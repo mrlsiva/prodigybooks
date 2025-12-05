@@ -65,7 +65,7 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ url('/resources/img/logo.png') }}" /></a>
+      <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ url('/img/logo.png') }}" /></a>
       <div class="collapse navbar-collapse" id="navbarCollapse">
        
         <ul class="navbar-nav ml-auto">
@@ -80,7 +80,7 @@
         </a>
         <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="{{ url('/aboutus') }}">About Us</a>
-          <a class="dropdown-item" target="_blank" href="{{ url('/resources/pdf/Our-Library-Catalogue.pdf') }}">Our Library Catalogue</a>
+          <a class="dropdown-item" target="_blank" href="{{ url('/pdf/Our-Library-Catalogue.pdf') }}">Our Library Catalogue</a>
           <a class="dropdown-item" href="{{ url('our-distributers') }}">Our Distributorship</a>
           <a class="dropdown-item" href="{{ url('our-publishing-partners') }}">Our Publishing Partners</a>
           <a class="dropdown-item" href="{{ url('our-clients') }}">Our Clients</a>
@@ -99,13 +99,13 @@
                                 <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"> <h5 class="text-left">Combo Hard Cover Books </h5> <a class="text-left">View More...</a> </div>
                                 <div class="dropdown-divider"></div>
                                 
-                                <div class="col-6	col-sm-6 col-md-3	col-lg-3 col-xl-3"><a href=""><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4"><h5>The king Box</h5></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4 mb-4"><img src="{{ url('/resources/img/king.png') }}" class="resources/img-fluid"></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><h4 class=""><span>₹</span>1000</h4></div><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><p class="">Choose any 10 books from the categories above and add it to your product boxes</a></div></a> </div>
+                                <div class="col-6	col-sm-6 col-md-3	col-lg-3 col-xl-3"><a href=""><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4"><h5>The king Box</h5></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4 mb-4"><img src="{{ url('/img/king.png') }}" class="resources/img-fluid"></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><h4 class=""><span>₹</span>1000</h4></div><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><p class="">Choose any 10 books from the categories above and add it to your product boxes</a></div></a> </div>
 
-                                <div class="col-6	col-sm-6 col-md-3	col-lg-3 col-xl-3"><a href=""><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4"><h5>The Queen Box</h5></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4 mb-4"><img src="{{ url('/resources/img/queen.png') }}" class="resources/img-fluid"></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><h4 class=""><span>₹</span>2000</h4></div><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><p class="">Choose any 20 books from the categories above and add it to your product boxes</a></div></a> </div>
+                                <div class="col-6	col-sm-6 col-md-3	col-lg-3 col-xl-3"><a href=""><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4"><h5>The Queen Box</h5></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4 mb-4"><img src="{{ url('/img/queen.png') }}" class="resources/img-fluid"></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><h4 class=""><span>₹</span>2000</h4></div><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><p class="">Choose any 20 books from the categories above and add it to your product boxes</a></div></a> </div>
 
-                                <div class="col-6	col-sm-6 col-md-3	col-lg-3 col-xl-3"><a href=""><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4"><h5>The Knight Box</h5></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4 mb-4"><img src="{{ url('/resources/img/knight.png') }}" class="resources/img-fluid"></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><h4 class=""><span>₹</span>3000</h4></div><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><p class="">Choose any 30 books from the categories above and add it to your product boxes</a></div></a> </div>
+                                <div class="col-6	col-sm-6 col-md-3	col-lg-3 col-xl-3"><a href=""><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4"><h5>The Knight Box</h5></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4 mb-4"><img src="{{ url('/img/knight.png') }}" class="resources/img-fluid"></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><h4 class=""><span>₹</span>3000</h4></div><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><p class="">Choose any 30 books from the categories above and add it to your product boxes</a></div></a> </div>
 
-                                <div class="col-6	col-sm-6 col-md-3	col-lg-3 col-xl-3"><a href=""><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4"><h5>The Great Warden Box</h5></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4 mb-4"><img src="{{ url('/resources/img/warden.png') }}" class="resources/img-fluid"></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><h4 class=""><span>₹</span>4000</h4></div><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><p class="">Choose any 40 books from the categories above and add it to your product boxes</a></div></a> </div>
+                                <div class="col-6	col-sm-6 col-md-3	col-lg-3 col-xl-3"><a href=""><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4"><h5>The Great Warden Box</h5></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12 mt-4 mb-4"><img src="{{ url('/img/warden.png') }}" class="resources/img-fluid"></div> <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><h4 class=""><span>₹</span>4000</h4></div><div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"><p class="">Choose any 40 books from the categories above and add it to your product boxes</a></div></a> </div>
 
                                 <div class="dropdown-divider"></div>
                                 <div class="col-12 col-sm-12 col-md-12	col-lg-12 col-xl-12"> <h5 class="text-left">Get Hard Cover Books </h5> <a class="text-left">View More...</a> </div>

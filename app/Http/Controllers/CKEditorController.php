@@ -58,7 +58,7 @@ class CKEditorController extends Controller
             // $cat_image = storage_path("app/public/uploads/img/".$cat_table_name->series_table_name);
    
             $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            $url = asset('storage/app/public/uploads/blog/'.$fileName); 
+            $url = asset('storage/uploads/blog/'.$fileName); 
             $msg = 'Image uploaded successfully'; 
             $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
                

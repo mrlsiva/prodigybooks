@@ -7,7 +7,7 @@
             
             <link rel="stylesheet" href="{{ url('/resources/fonts/material-icon/css/material-design-iconic-font.min.css') }}">
 
-            <link rel="stylesheet" href="{{ url('/resources/css/login.css') }}">
+            <link rel="stylesheet" href="{{ url('/css/login.css') }}">
 
             <section class="signup">
                 <div class="container">
@@ -70,7 +70,7 @@
     <div class="row">
         @include('includes.carousal')
     </div>
-    <div class="row text-center slider-thumb1"> <img src="{{ url('/resources/img/load.gif') }}" class="img-fluid text-center center_alignment_img" /> </div>
+    <div class="row text-center slider-thumb1"> <img src="{{ url('/img/load.gif') }}" class="img-fluid text-center center_alignment_img" /> </div>
     <div id="show_data" class="container mt-4 mb-2 text-center p-0" style="display:none">
 
         @foreach($categories as $value)
@@ -89,7 +89,7 @@
 @endif
         
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-    <script src="resources/js/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ url('/js/slick.js') }}" type="text/javascript" charset="utf-8"></script>
     <script>
         $(document).ready(function() {
 // debugger
@@ -117,7 +117,7 @@
                     // debugger
                     for (let i = 0; i < msg.length; i++) {
                         for (let j = 0; j < msg[i].length; j++) {
-                            $('#category-' + msg[i][j].categories_id + ' section').append("<div class='mr-2 ml-2 text-center'><a href='" + base_url + "/product/" + msg[i][j].categories_id + "/" + msg[i][j].sku + "'><img class='img-fluid' src='storage/app/public/uploads/img/" + msg[i][j].series_table_name + "/thumb/" + msg[i][j].thumb_img + "'><a/><h5 class='mt-1 mb-1 show_two_line'> " + msg[i][j].book_title + " </h5><a href='" + base_url + "/product/" + msg[i][j].categories_id + "/" + msg[i][j].sku + "'> <button  class='button e-series-book'><span>View Details</span></button></a></div>");
+                            $('#category-' + msg[i][j].categories_id + ' section').append("<div class='mr-2 ml-2 text-center'><a href='" + base_url + "/product/" + msg[i][j].categories_id + "/" + msg[i][j].sku + "'><img class='img-fluid' src='storage/uploads/img/" + msg[i][j].series_table_name + "/thumb/" + msg[i][j].thumb_img + "'><a/><h5 class='mt-1 mb-1 show_two_line'> " + msg[i][j].book_title + " </h5><a href='" + base_url + "/product/" + msg[i][j].categories_id + "/" + msg[i][j].sku + "'> <button  class='button e-series-book'><span>View Details</span></button></a></div>");
                         }
 
                     }

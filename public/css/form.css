@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
+
+body {
+    background: #ffffff;
+    color: #898989;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+	margin:0 auto;
+}
+a {
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+h1 {
+    color: #d8ec83;
+	font-family: 'Open Sans', sans-serif; 
+	font-size: 30px;
+	font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 40px;
+	
+}
+h2 {
+    color: #d8ec83;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 25px;
+	font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 35px;
+	padding-bottom: 20px;
+}
+h3 {
+    color: #ffffff;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+h4 {
+    color: #ffffff;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 20px;
+	padding-bottom: 0px;
+}
+
+p {
+	color: #ffffff;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-bottom: 15px;
+}
+
+.no-pad {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/*========================================== 1.GLOBAL CSS END ===========================================*/
+
+/*========================================== 2.COMMON CSS START ===========================================*/
+
+.text-center {
+	text-align: center;
+}
+.section-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.form-sec-bg {
+    background-color: #00000096;
+	border: 1px solid #000;
+}
+
+.bgimage-property {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* SAFARI CLASS */
+.rowsafari {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	
+}
+
+button:focus {
+    outline: 0px;
+}
+/*========================================== 2.COMMON CSS END ===========================================*/
+
+
+/*========================================== CTA START ===========================================*/
+
+/* FORM CTA */
+.cta-bgimg {
+	background-color: #000;
+    background-image: url("../img/form/bg.jpg");
+}
+.cta-padding {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.heading-1 {
+    color: #d8ec83 !important;
+	font-family: 'Open Sans', sans-serif !important;
+	font-size: 30px !important;
+	font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    line-height: 40px !important;
+}
+
+.heading-2 {
+    color: #d8ec83;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 30px;
+	padding-bottom: 10px;
+}
+.heading-3 {
+    color: #ffffff;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 26px;
+}
+.important-heading {
+    color: #d8ec83;
+}
+
+.import-content {
+    color: #ffffff;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+	padding-bottom: 0px;
+}
+
+.btn-top {
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+
+.btn-1 {
+    background-color: #E43750;
+    color: #ffffff;
+	font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+	line-height: 24px;
+	padding: 10px 16px;
+}
+
+/*========================================== CTA END ===========================================*/
+
+/*========================================== CONTACT FORM START ===========================================*/
+
+/* FORM COLUMN */
+
+.contact-form select,
+.contact-form .form-input {
+    background-color: #ffffff;
+    border:1px solid #8C5946;
+    border-radius: 5px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    color: #797979;
+    height: 30px;
+    line-height: 26px;
+    padding: 0px 10px;
+    position:relative;
+    width:100%;
+}
+.contact-form select {
+    line-height: 46px;
+}
+.contact-form select option {
+	border: none;
+	padding: 10px;
+}
+.contact-form .form-textarea.error,
+.contact-form .form-input.error {
+	box-shadow: 0px 0px 2px 1px #ff0000;
+	-webkit-box-shadow: 0px 0px 2px 1px #ff0000;
+	-moz-box-shadow: 0px 0px 2px 1px #ff0000;
+}
+.contact-form .form-div label {
+    color:#ff0000;
+    font-weight:400;
+}
+label {
+	margin-bottom: 0;
+	margin-top: 0px;
+}
+.form-input.error,
+.form-input.place_error,
+.form-input.errorClass,
+.contact-form .failMessage {
+    color:#ff0000 !important;
+}
+.contact-form .form-textarea {
+    background-color: #ffffff;
+    border:1px solid #eeeeee;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    color: #797979;
+	line-height: 24px;
+	height: 100px;
+    padding: 10px 10px 10px 10px;
+    position:relative;
+    width:100%;
+}
+.form-textarea:-moz-placeholder, .form-input:-moz-placeholder {
+    /* Firefox 4 - 18 */
+    color: #797979;
+    opacity: 1;
+}
+.form-textarea:-webkit-input-placeholder, .form-input:-webkit-input-placeholder {
+    /* Chrome */
+    color: #797979;
+}
+.form-textarea:-ms-input-placeholder, .form-input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #797979;
+}
+.form-textarea::-moz-placeholder, .form-input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #797979;
+    opacity: 1;
+}
+
+.form-textarea.errorClass:-moz-placeholder, .form-input.errorClass:-moz-placeholder {
+    /* Firefox 4 - 18 */
+    color: #ff0000;
+    opacity: 1;
+}
+.form-textarea.errorClass::-webkit-input-placeholder, .form-input.errorClass::-webkit-input-placeholder {
+    /* Chrome */
+    color: #ff0000;
+}
+.form-textarea.errorClass:-ms-input-placeholder, .form-input.errorClass:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #ff0000;
+}
+.form-textarea.errorClass::-moz-placeholder, .form-input.errorClass::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #ff0000;
+    opacity: 1;
+}
+.contact-form .form-div {
+    padding-bottom: 5px;
+}
+.form-pad-right {
+	padding-right: 15px;
+}
+.form-pad-left {
+	padding-left: 15px;
+}
+.form-div .input-group {
+    position:relative;
+    width:100%;
+}
+.SuccessMsg,
+.sucessMessage {
+    color: #0fa80f;
+	font-size: 14px !important;
+	line-height: 24px !important;
+}
+.FailureMsg,
+.failMessage {
+    color: #ff0000;
+	font-size: 14px !important;
+	line-height: 24px !important;
+}
+.messageDiv {
+    display:table;
+    text-align: center;
+    margin-top:10px;
+    width: 100%;
+}
+
+/*========================================== CONTACT FORM END ===========================================*/
+
+/*========================================== MEDIA QUERIES START ===========================================*/
+
+@media only screen and (min-width: 240px) and (max-width: 320px) {
+	.heading-1 {
+	font-size: 30px !important;
+    line-height: 40px !important;
+	}
+	.heading-2 {
+	font-size: 20px !important;
+    line-height: 30px !important;
+	}
+	.heading-3 {
+	font-size: 18px !important;
+    line-height: 28px !important;
+	}
+}
+
+
+@media only screen and (min-width: 480px) and (max-width: 740px) {
+	
+	.heading-2 {
+	font-size: 25px !important;
+    line-height: 35px !important;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+	.heading-1 {
+	font-size: 35px !important;
+    line-height: 40px !important;
+	}
+	.heading-2 {
+	font-size: 20px !important;
+    line-height: 30px !important;
+	}
+}
+
+
+/*========================================== MEDIA QUERIES END ===========================================*/
+

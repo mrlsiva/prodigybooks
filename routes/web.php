@@ -37,7 +37,21 @@ Route::get('/route-clear', function() {
  Route::get('/userexpiry_email', function(){
     Artisan::call('schedule:run');
  });
-Auth::routes();
+// Auth::routes(); // Commented out - not available in Laravel 10+ without laravel/ui
+
+// Manual auth routes for Laravel 10+ (instead of Auth::routes())
+Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
+Route::get('/password/reset', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('/password/email', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('/password/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/password/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
+Route::get('/email/verify', 'Auth\VerificationController@show')->name('verification.notice');
+Route::get('/email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
+Route::get('/email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 Route::get('/', 'HomeContentsController@viewCategories');
 Route::get('/home', 'HomeContentsController@viewCategories');

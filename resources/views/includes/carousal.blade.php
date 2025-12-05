@@ -5,21 +5,21 @@
   </ol> -->
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
-      <img class="d-block img-fluid" src="resources/img/1.jpg" alt="First slide">
+      <img class="d-block img-fluid" src="img/1.jpg" alt="First slide">
       <div class="carousel-caption d-md-block  align-self-center">
     <h4>A Place Set Aside For Books And Their Friends</h4>
     <h4>  Enchanting Selections Of Wonderful Books</h4>
   </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block img-fluid" src="resources/img/2.jpg" alt="First slide">
+      <img class="d-block img-fluid" src="img/2.jpg" alt="First slide">
       <div class="carousel-caption d-md-block  align-self-center">
     <h4>Once You Learn To Read, You Will Be Forever Free</h4>
     <h4>Where You Never Pay Full Price For Anything</h4>
   </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block img-fluid" src="resources/img/3.jpg" alt="First slide">
+      <img class="d-block img-fluid" src="img/3.jpg" alt="First slide">
       <div class="carousel-caption d-md-block  align-self-center">
     <h4>Reading Helps Your Seed Of Knowledge Grow</h4>
     <h4>A Place Set Aside For Books And Their Friends</h4>
@@ -30,14 +30,14 @@
 
     </div>
     <div class="carousel-item">
-      <img class="d-block img-fluid" src="resources/img/4.jpg" alt="First slide">
+      <img class="d-block img-fluid" src="img/4.jpg" alt="First slide">
       <div class="carousel-caption d-md-block  align-self-center">
     <h4>You’re Never Alone When You’re Reading A Book</h4>
     <h4>What Goes Into The Mind Comes Out In A Life</h4>
   </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block img-fluid" src="resources/img/5.jpg" alt="First slide">
+      <img class="d-block img-fluid" src="img/5.jpg" alt="First slide">
       <div class="carousel-caption d-md-block  align-self-center">
     <h4>The Legendary Independent Bookstore</h4>
     <h4>Read! You’d Be Surprised What You Find</h4>

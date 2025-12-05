@@ -64,7 +64,7 @@ class CartController extends Controller
             // dd($item->id);
             $cat_img = DB::table($item->series_table_name)->select('thumb_img')->where("sku",$item->sku)->first();
             // dd($item, $cat_img);
-            $getTable[$k]["image"] = url("/")."/storage/app/public/uploads/img/".$item->series_table_name."/thumb/".$cat_img->thumb_img;
+            $getTable[$k]["image"] = url("/")."/storage/uploads/img/".$item->series_table_name."/thumb/".$cat_img->thumb_img;
             $getTable[$k]["sku"] = $item->sku;
             $getTable[$k]["id"] = $item->id;
             $getTable[$k]["book_title"] = $item->book_title;
@@ -96,7 +96,7 @@ class CartController extends Controller
                 // dd($item->id);
                 $cat_img = DB::table($item->series_table_name)->select('thumb_img')->where("sku",$item->sku)->first();
                 // dd($item, $cat_img);
-                $boxTable[$k]["image"] = url("/")."/storage/app/public/uploads/img/".$item->series_table_name."/thumb/".$cat_img->thumb_img;
+                $boxTable[$k]["image"] = url("/")."/storage/uploads/img/".$item->series_table_name."/thumb/".$cat_img->thumb_img;
                 $boxTable[$k]["sku"] = $item->sku;
                 $boxTable[$k]["id"] = $item->id;
                 $boxTable[$k]["book_title"] = $item->book_title;
@@ -144,7 +144,7 @@ class CartController extends Controller
                     ->get();
                 foreach ($boxItems as $k=>$item) {
                     $cat_img = DB::table($item->series_table_name)->select('thumb_img')->where("sku",$item->sku)->first();
-                    $boxTable[$k]["image"] = "https://littleprodigybooks.in/"."/storage/app/public/uploads/img/".$item->series_table_name."/thumb/".$cat_img->thumb_img;
+                    $boxTable[$k]["image"] = "https://littleprodigybooks.in/"."/storage/uploads/img/".$item->series_table_name."/thumb/".$cat_img->thumb_img;
                     $boxTable[$k]["category"] = $item->series_name;
                     $boxTable[$k]["sku"] = $item->sku;
                     $boxTable[$k]["id"] = $item->id;

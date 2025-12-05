@@ -6,7 +6,7 @@
             
             <link rel="stylesheet" href="{{ url('/resources/fonts/material-icon/css/material-design-iconic-font.min.css') }}">
 
-            <link rel="stylesheet" href="{{ url('/resources/css/login.css') }}">
+            <link rel="stylesheet" href="{{ url('/css/login.css') }}">
             @if(isset($message))
                 <div class="test">{{$message}}</div>
             @endif

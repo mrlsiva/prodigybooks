@@ -13,7 +13,7 @@
 @foreach ($Ebooks as $value)
 <a href="{{url('read-book/'.$value->categories_id.'/'.$value->sku)}}" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-2">
    <!-- <img src="https://littleprodigybooks.s3.ap-south-1.amazonaws.com/img/{{$seriesTableName}}/thumb/{{$value->thumb_img}}" class="img-responsive"> -->
-   <img src="../storage/app/public/uploads/img/{{$seriesTableName}}/thumb/{{$value->thumb_img}}" class="img-responsive">
+   <img src="/storage/uploads/img/{{$seriesTableName}}/thumb/{{$value->thumb_img}}" class="img-responsive">
    
    <h4 class="mb-2 mt-2 ">  {{$value->book_title}} </h4>
 </a>

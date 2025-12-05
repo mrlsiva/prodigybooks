@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="{{ url('/resources/css/admin.css') }}">
+<link rel="stylesheet" href="{{ url('/css/admin.css') }}">
 <div class="container">
 <div class="row">
 <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 text-center">
-<a class="navbar-brand" href="{{ url('/') }}"><img src="{{ url('/resources/img/logo.png') }}" /></a>
+<a class="navbar-brand" href="{{ url('/') }}"><img src="{{ url('/img/logo.png') }}" /></a>
 </div>
 <div class="col-12 col-sm-6 col-md-8 col-lg-8 col-xl-8 text-right">
 <!-- <a></a> -->

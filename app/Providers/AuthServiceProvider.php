@@ -23,10 +23,11 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->registerPolicies();
 
-        Passport::routes();
+        // Passport routes are now automatically registered in Laravel 10+
+        // No need to explicitly call Passport::routes()
     }
 }

@@ -3,15 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Auth;
-use DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
-
-    use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
@@ -28,6 +26,16 @@ class LoginController extends Controller
     {
         // dd('Test');
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showLoginForm()
+    {
+        return view('auth.login');
     }
 
     public function login(Request $request){
@@ -52,14 +60,14 @@ class LoginController extends Controller
 
                     // dd($data, 'Home');
                     DB::table('users')->where('id', Auth::user()->id)->update([
-                        'session_id'=> \Session::getId()
+                        'session_id'=> Session::getId()
                     ]);
                 } else{
                     // dd(\Session::getId(), Auth::user()->id, $exists, $request->session()->has('key'), 'check login');
                     //Auth::logout();
                     // Auth::user();
                     // return back()->with('warning', 'Your account is in use')->with('currentSession', \Session::getId())->with('user', Auth::user()->id);
-                    return redirect('/confirm-login')->with('currentSession', \Session::getId());
+                    return redirect('/confirm-login')->with('currentSession', Session::getId());
                 }
                 // if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
                 //     // The user is being remembered...

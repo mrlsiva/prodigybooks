@@ -4,7 +4,7 @@
             <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4">
                 <h5 class="mb-4">Little Prodigy Books</h5>
             <p>A Children Bookstore Specializing in books & E-learning for  3-15 year old’s providing Skill Library Books with  Puzzles, Activities and Experiments. We Strive To Connect Children And Teens To Quality Literature Through A Rich Selection Of Books.</p>
-        <img src="{{ url('/resources/img/ssl.gif') }}" class="img-fluid mt-3" /></div>
+        <img src="{{ url('/img/ssl.gif') }}" class="img-fluid mt-3" /></div>
             <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4">
                 <h5 class="mb-4">Information</h5>
                 <a href="{{ url('/') }}">Home</a> 
@@ -13,7 +13,7 @@
                 <a href="{{ url('/trial-books') }}">TRIAL – VERSION</a>
                 <!--<a href="{{ url('/trial-series') }}">TRIAL – VERSION</a>-->
                 <!-- <a href="{{ url('/aboutus') }}">Our E-Series</a> -->
-                <a target="_blank" href="{{ url('/resources/pdf/Our-Library-Catalogue.pdf') }}">Little Prodigy Catalogue</a>
+                <a target="_blank" href="{{ url('/pdf/Our-Library-Catalogue.pdf') }}">Little Prodigy Catalogue</a>
                 <!-- <a href="{{ url('/blog') }}">Blogs</a> -->
                 <!-- <a href="{{ url('/aboutus') }}">Privacy Policy</a> -->
                 <a href="{{ url('/tc') }}">Terms & Conditions</a>
@@ -63,7 +63,7 @@
 
 <div id="rightslide" class="rightslide">
   <a target="_blank" id="whatsapp" href="https://api.whatsapp.com/send?phone=+919011524939" alt="whatsapp icon"><i class="fa fa-whatsapp  fa-4" aria-hidden="true"></i> </a>
-  <a target="_blank" data-toggle="Catalogue" data-placement="left" title="Tooltip on left" id="Catalogue" href="{{ url('/resources/pdf/Catalogue-2020-.pdf') }}" alt="Catalogue icon"><img src="{{ url('/resources/img/book.svg') }}" class="img-fluid" /> </a>
-  <a target="_blank" data-toggle="Catalogue" data-placement="left" title="Tooltip on left" id="Catalogue1" href="{{ url('/resources/pdf/Catalogue-2020-.pdf') }}" alt="Catalogue icon"> Catalogue </a>
+  <a target="_blank" data-toggle="Catalogue" data-placement="left" title="Tooltip on left" id="Catalogue" href="{{ url('/pdf/Catalogue-2020-.pdf') }}" alt="Catalogue icon"><img src="{{ url('/img/book.svg') }}" class="img-fluid" /> </a>
+  <a target="_blank" data-toggle="Catalogue" data-placement="left" title="Tooltip on left" id="Catalogue1" href="{{ url('/pdf/Catalogue-2020-.pdf') }}" alt="Catalogue icon"> Catalogue </a>
 </div>
 

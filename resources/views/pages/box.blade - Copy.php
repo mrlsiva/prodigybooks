@@ -10,7 +10,7 @@
             <div class="card-body">
                 <!-- Sex image -->
                 
-                <img id="img_sex" class="person-img" src="{{ url('/resources/img/king.png') }}">
+                <img id="img_sex" class="person-img" src="{{ url('/img/king.png') }}">
                 
                 <div class="container text-center mb-4">
                     <h2 id="who_message" class="card-title">The <span id="box-title">King</span>’s Box</h2>
@@ -165,10 +165,10 @@ $("body").delegate(".box a", "click", function(){
 </script>
 <script>
 // URLs images
-var king = "{{ url('/resources/img/king.png') }}";
-var queen = "{{ url('/resources/img/queen.png') }}";
-var knight = "{{ url('/resources/img/knight.png') }}";
-var warden = "{{ url('/resources/img/warden.png') }}";
+var king = "{{ url('/img/king.png') }}";
+var queen = "{{ url('/img/queen.png') }}";
+var knight = "{{ url('/img/knight.png') }}";
+var warden = "{{ url('/img/warden.png') }}";
 
 // On page loaded
 $( document ).ready(function() {
