@@ -113,20 +113,30 @@ echo "</div>";
 
 echo "<div class='section'><h2>5. Laravel Bootstrap Test</h2>";
 try {
+    // Suppress deprecation warnings
+    error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+    
     require __DIR__.'/../vendor/autoload.php';
     echo "<p class='ok'>✓ Autoloader loaded</p>";
+    flush();
     
     $app = require_once __DIR__.'/../bootstrap/app.php';
     echo "<p class='ok'>✓ Bootstrap file loaded</p>";
+    flush();
     
     $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
     echo "<p class='ok'>✓ Kernel created</p>";
+    flush();
     
     // Try to handle a simple request with timeout
     $start = microtime(true);
     
     ob_start();
     $request = Illuminate\Http\Request::capture();
+    
+    echo "<p>Processing request...</p>";
+    flush();
+    
     $response = $kernel->handle($request);
     $output = ob_get_clean();
     
@@ -134,10 +144,21 @@ try {
     
     echo "<p class='ok'>✓ Request handled in {$duration}s</p>";
     echo "<p>Response Status: <strong>" . $response->getStatusCode() . "</strong></p>";
-    echo "<p>Response Size: <strong>" . strlen($response->getContent()) . " bytes</strong></p>";
     
-    if (strlen($response->getContent()) == 0) {
-        echo "<p class='error'>⚠️ Response is empty! This is your problem.</p>";
+    $contentLength = strlen($response->getContent());
+    echo "<p>Response Size: <strong>" . $contentLength . " bytes</strong></p>";
+    
+    if ($contentLength == 0) {
+        echo "<p class='error'>⚠️ Response is EMPTY! This is the problem.</p>";
+    } else {
+        echo "<p class='ok'>✓ Response contains content!</p>";
+        
+        // Show first 500 characters of response
+        echo "<h3>Response Preview:</h3>";
+        echo "<pre style='background:#f4f4f4;padding:10px;max-height:200px;overflow:auto;'>";
+        echo htmlspecialchars(substr($response->getContent(), 0, 500));
+        echo "</pre>";
+    }
         echo "<p>Checking Laravel logs...</p>";
         
         $logPath = __DIR__.'/../storage/logs/laravel.log';
