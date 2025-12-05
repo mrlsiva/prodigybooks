@@ -21,6 +21,9 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
+// For shared hosting: Update these paths if Laravel is outside public_html
+// Local: __DIR__.'/../vendor/autoload.php'
+// Shared Hosting: __DIR__.'/../little_prodigy_books/vendor/autoload.php'
 require __DIR__.'/../vendor/autoload.php';
 
 /*
@@ -35,6 +38,9 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
+// For shared hosting: Update this path if Laravel is outside public_html
+// Local: __DIR__.'/../bootstrap/app.php'
+// Shared Hosting: __DIR__.'/../little_prodigy_books/bootstrap/app.php'
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 /*
