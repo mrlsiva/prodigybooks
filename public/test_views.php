@@ -3,35 +3,63 @@
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
 ini_set('display_errors', 1);
 
-require __DIR__.'/../vendor/autoload.php';
-$app = require_once __DIR__.'/../bootstrap/app.php';
-
-use Illuminate\Support\Facades\DB;
-
 echo "<!DOCTYPE html><html><body style='font-family:Arial;padding:20px;'>";
 echo "<h2>Testing View Rendering</h2>";
+flush();
 
 try {
+    echo "<p>1. Loading Laravel...</p>";
+    flush();
+    
+    require __DIR__.'/../vendor/autoload.php';
+    $app = require_once __DIR__.'/../bootstrap/app.php';
+    
+    echo "<p>✓ Laravel bootstrap loaded</p>";
+    flush();
+    
+    echo "<p>2. Booting kernel...</p>";
+    flush();
+    
     $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+    
+    echo "<p>✓ Kernel created</p>";
+    flush();
+    
+    echo "<p>3. Bootstrapping application...</p>";
+    flush();
+    
     $request = Illuminate\Http\Request::capture();
     $kernel->bootstrap();
     
-    echo "<p>✓ Laravel loaded</p>";
+    echo "<p>✓ Application bootstrapped</p>";
+    flush();
+    
+    echo "<p>4. Testing database...</p>";
+    flush();
     
     // Test database connection
-    $categories = DB::table('categories')->count();
+    $categories = \DB::table('categories')->count();
     echo "<p>✓ Database connected: $categories categories found</p>";
+    flush();
+    
+    echo "<p>5. Checking view files...</p>";
+    flush();
     
     // Test if view file exists
     $viewPath = base_path('resources/views/welcome.blade.php');
     if (file_exists($viewPath)) {
         echo "<p>✓ View file exists: welcome.blade.php</p>";
     }
+    flush();
     
     $layoutPath = base_path('resources/views/layouts/app.blade.php');
     if (file_exists($layoutPath)) {
         echo "<p>✓ Layout file exists: layouts/app.blade.php</p>";
     }
+    flush();
+    
+    echo "<p>6. Checking storage directories...</p>";
+    flush();
     
     // Check storage/views folder
     $compiledViewsPath = storage_path('framework/views');
@@ -42,6 +70,7 @@ try {
     } else {
         echo "<p>✓ Compiled views directory exists</p>";
     }
+    flush();
     
     // Check if it's writable
     if (is_writable($compiledViewsPath)) {
