@@ -32,9 +32,6 @@ try {
     echo "Handling request...<br>";
     flush();
     
-    // Enable Laravel error logging
-    config(['app.debug' => true]);
-    
     $response = $kernel->handle($request);
     
     echo "Response status: " . $response->getStatusCode() . "<br>";
@@ -43,7 +40,7 @@ try {
     
     if ($response->getStatusCode() == 500) {
         echo "<hr><h2 style='color:red;'>500 Error Response!</h2>";
-        echo "<p>Content:</p><pre>" . htmlspecialchars(substr($response->getContent(), 0, 2000)) . "</pre>";
+        echo "<p>First 2000 chars of content:</p><pre>" . htmlspecialchars(substr($response->getContent(), 0, 2000)) . "</pre>";
     } else {
         echo "Sending response...<br>";
         flush();
