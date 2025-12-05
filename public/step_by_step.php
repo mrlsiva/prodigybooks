@@ -31,11 +31,24 @@ try {
     
     echo "Handling request...<br>";
     flush();
+    
+    // Enable Laravel error logging
+    config(['app.debug' => true]);
+    
     $response = $kernel->handle($request);
     
-    echo "Sending response...<br>";
+    echo "Response status: " . $response->getStatusCode() . "<br>";
+    echo "Response size: " . strlen($response->getContent()) . " bytes<br>";
     flush();
-    $response->send();
+    
+    if ($response->getStatusCode() == 500) {
+        echo "<hr><h2 style='color:red;'>500 Error Response!</h2>";
+        echo "<p>Content:</p><pre>" . htmlspecialchars(substr($response->getContent(), 0, 2000)) . "</pre>";
+    } else {
+        echo "Sending response...<br>";
+        flush();
+        $response->send();
+    }
     
     $kernel->terminate($request, $response);
     
