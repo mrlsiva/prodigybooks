@@ -67,10 +67,13 @@ div#pages {
     echo '<!-- Selected directory: ' . ($dirname ?? 'NONE') . ' -->';
     echo '<!-- Images found: ' . count($images) . ' -->';
     
+    // Determine which directory name to use in URLs (without .pdf for web access)
+    $url_book_dir = str_replace('.pdf', '', $book_dir);
+    
     foreach($images as $image) {
-        // Output just the relative path: uploads/book/book_XXX.pdf/0001.jpg
+        // Output path without .pdf: uploads/book/book_415/0001.jpg
         $filename = basename($image);
-        echo '<span>uploads/book/'.$book_dir.'/'.$filename.'</span>';
+        echo '<span>uploads/book/'.$url_book_dir.'/'.$filename.'</span>';
     }
     ?>
 </div>
