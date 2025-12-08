@@ -20,15 +20,15 @@ div#pages {
     <div id="pages">
       
     <?php
-    // Remove .pdf extension if present to get the directory name
-    $book_dir = str_replace('.pdf', '', $book_path);
+    // Keep the full book_path as is (including .pdf if present)
+    $book_dir = $book_path;
     
     // Try multiple possible directory locations
     $possible_dirs = [
         storage_path('app/public/uploads/book/'.$book_dir),
-        storage_path('app/public/uploads/book/'.basename($book_dir)), // Just filename without path
+        storage_path('app/public/uploads/book/'.str_replace('.pdf', '', $book_dir)), // Also try without .pdf
         public_path('storage/uploads/book/'.$book_dir),
-        public_path('storage/uploads/book/'.basename($book_dir)),
+        public_path('storage/uploads/book/'.str_replace('.pdf', '', $book_dir)),
     ];
     
     $dirname = null;
@@ -78,8 +78,8 @@ document.oncontextmenu =new Function("return false;")
     $(document).ready(function () {
         var base_url = "{{url('/')}}";
         
-        // Remove .pdf extension from book path to get directory name
-        var bookDir = $("#book").val().replace('.pdf', '');
+        // Keep the book path as is (with .pdf extension)
+        var bookPath = $("#book").val();
         
         // Debug: Check what's in the pages div
         console.log("Pages div HTML:", $('#pages').html());
@@ -96,7 +96,7 @@ document.oncontextmenu =new Function("return false;")
             
             console.log("Extracted filename:", filename);
 
-            arr.push({src:base_url + "/storage/uploads/book/" + bookDir + "/" + filename, thumb:base_url + "/storage/uploads/book/" + bookDir + "/" + filename, title:"Little Prodigy Books"})
+            arr.push({src:base_url + "/storage/uploads/book/" + bookPath + "/" + filename, thumb:base_url + "/storage/uploads/book/" + bookPath + "/" + filename, title:"Little Prodigy Books"})
         })
         
         console.log("Flipbook pages array:", arr);
@@ -104,8 +104,7 @@ document.oncontextmenu =new Function("return false;")
         
         if(arr.length === 0) {
             console.error("No pages found! Check if images exist in the #pages div");
-            console.error("Book path:", $("#book").val());
-            console.error("Book directory:", bookDir);
+            console.error("Book path:", bookPath);
             console.error("Category:", $("#category").val());
         }
            
