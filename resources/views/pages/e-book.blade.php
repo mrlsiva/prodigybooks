@@ -68,7 +68,9 @@ div#pages {
     echo '<!-- Images found: ' . count($images) . ' -->';
     
     foreach($images as $image) {
-        echo '<span>'.$image.'</span>';
+        // Output just the relative path: uploads/book/book_XXX.pdf/0001.jpg
+        $filename = basename($image);
+        echo '<span>uploads/book/'.$book_dir.'/'.$filename.'</span>';
     }
     ?>
 </div>
@@ -87,16 +89,11 @@ document.oncontextmenu =new Function("return false;")
         
         var arr=[];
         $.each($('#pages span'), function(i){
-            var getImg = $(this).text();
+            var imagePath = $(this).text(); // Now contains: uploads/book/book_415.pdf/0001.jpg
             
-            console.log("Image path from span:", getImg);
-            
-            // Extract just the filename from the full path
-            var filename = getImg.substring(getImg.lastIndexOf('/') + 1);
-            
-            console.log("Extracted filename:", filename);
+            console.log("Image path from span:", imagePath);
 
-            arr.push({src:base_url + "/storage/uploads/book/" + bookPath + "/" + filename, thumb:base_url + "/storage/uploads/book/" + bookPath + "/" + filename, title:"Little Prodigy Books"})
+            arr.push({src:base_url + "/storage/" + imagePath, thumb:base_url + "/storage/" + imagePath, title:"Little Prodigy Books"})
         })
         
         console.log("Flipbook pages array:", arr);
