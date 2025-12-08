@@ -71,9 +71,9 @@ div#pages {
     $url_book_dir = str_replace('.pdf', '', $book_dir);
     
     foreach($images as $image) {
-        // Output path without .pdf: uploads/book/book_415/0001.jpg
+        // Output full storage path: storage/app/public/uploads/book/book_415/0001.jpg
         $filename = basename($image);
-        echo '<span>uploads/book/'.$url_book_dir.'/'.$filename.'</span>';
+        echo '<span>storage/app/public/uploads/book/'.$url_book_dir.'/'.$filename.'</span>';
     }
     ?>
 </div>
@@ -92,11 +92,11 @@ document.oncontextmenu =new Function("return false;")
         
         var arr=[];
         $.each($('#pages span'), function(i){
-            var imagePath = $(this).text(); // Now contains: uploads/book/book_415.pdf/0001.jpg
+            var imagePath = $(this).text(); // Now contains: storage/app/public/uploads/book/book_415/0001.jpg
             
             console.log("Image path from span:", imagePath);
 
-            arr.push({src:base_url + "/storage/" + imagePath, thumb:base_url + "/storage/" + imagePath, title:"Little Prodigy Books"})
+            arr.push({src:base_url + "/" + imagePath, thumb:base_url + "/" + imagePath, title:"Little Prodigy Books"})
         })
         
         console.log("Flipbook pages array:", arr);
