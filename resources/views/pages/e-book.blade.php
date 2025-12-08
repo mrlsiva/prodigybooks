@@ -16,7 +16,7 @@ div#pages {
 <div id="container">
 <input type="hidden" id="book" value={{$book_path}} />
 <input type="hidden" id="category" value={{$series_table_name}} />
-    <img src= "{{ url('storage/app/public/uploads/img/'.$series_table_name.'/thumb/'.$thumb_img) }}" />
+    <img src= "{{ url('storage/uploads/img/'.$series_table_name.'/thumb/'.$thumb_img) }}" />
     <div id="pages">
       
     <?php
@@ -39,11 +39,19 @@ document.oncontextmenu =new Function("return false;")
         var arr=[];
         $.each($('#pages span'), function(i){
             var getImg = $(this).text();
-           
-            var splitImg = getImg.split('.pdf/');
+            
+            // Extract just the filename from the full path
+            var filename = getImg.substring(getImg.lastIndexOf('/') + 1);
 
-            arr.push({src:base_url + "/storage/uploads/book/" + $("#book").val()+"/"+splitImg[1], thumb:base_url + "/storage/uploads/book/" + $("#book").val()+"/"+splitImg[1], title:"Little Prodigy Books"})
+            arr.push({src:base_url + "/storage/uploads/book/" + $("#book").val()+"/"+filename, thumb:base_url + "/storage/uploads/book/" + $("#book").val()+"/"+filename, title:"Little Prodigy Books"})
         })
+        
+        console.log("Flipbook pages array:", arr);
+        console.log("Total pages:", arr.length);
+        
+        if(arr.length === 0) {
+            console.error("No pages found! Check if images exist in the #pages div");
+        }
            
         $("#container").flipBook({
             pages:arr,
