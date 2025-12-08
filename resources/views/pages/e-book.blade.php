@@ -24,6 +24,11 @@ div#pages {
     $book_dir = $book_path;
     $category = $series_table_name;
     
+    // Temporary debug - will remove after finding issue
+    echo "<!-- DEBUG: book_path = " . $book_path . " -->";
+    echo "<!-- DEBUG: category = " . $category . " -->";
+    echo "<!-- DEBUG: book_dir = " . $book_dir . " -->";
+    
     // Try multiple possible directory locations with category folder
     $possible_dirs = [
         storage_path('app/public/uploads/book/'.$category.'/'.$book_dir),
@@ -68,6 +73,15 @@ div#pages {
     if(count($images) > 0) {
         natsort($images);
     }
+    
+    // Temporary debug
+    echo "<!-- DEBUG: Tried directories: -->";
+    foreach($possible_dirs as $dir) {
+        echo "<!-- " . $dir . " - " . (is_dir($dir) ? "EXISTS" : "NOT FOUND") . " -->";
+    }
+    echo "<!-- DEBUG: Selected directory: " . ($dirname ?? "NONE") . " -->";
+    echo "<!-- DEBUG: Images found: " . count($images) . " -->";
+    echo "<!-- DEBUG: found_category_path: " . ($found_category_path ?? "NULL") . " -->";
     
     // Determine which directory name to use in URLs (without .pdf for web access)
     $url_book_dir = str_replace('.pdf', '', $book_dir);
