@@ -69,14 +69,6 @@ div#pages {
         natsort($images);
     }
     
-    // Debug: Show all attempted directories and result
-    echo '<!-- Attempted directories: -->';
-    foreach($possible_dirs as $dir) {
-        echo '<!-- ' . $dir . ' - ' . (is_dir($dir) ? 'EXISTS' : 'NOT FOUND') . ' -->';
-    }
-    echo '<!-- Selected directory: ' . ($dirname ?? 'NONE') . ' -->';
-    echo '<!-- Images found: ' . count($images) . ' -->';
-    
     // Determine which directory name to use in URLs (without .pdf for web access)
     $url_book_dir = str_replace('.pdf', '', $book_dir);
     
@@ -97,30 +89,11 @@ document.oncontextmenu =new Function("return false;")
     $(document).ready(function () {
         var base_url = "{{url('/')}}";
         
-        // Keep the book path as is (with .pdf extension)
-        var bookPath = $("#book").val();
-        
-        // Debug: Check what's in the pages div
-        console.log("Pages div HTML:", $('#pages').html());
-        console.log("Span count:", $('#pages span').length);
-        
         var arr=[];
         $.each($('#pages span'), function(i){
-            var imagePath = $(this).text(); // Now contains: storage/app/public/uploads/book/book_415/0001.jpg
-            
-            console.log("Image path from span:", imagePath);
-
+            var imagePath = $(this).text();
             arr.push({src:base_url + "/" + imagePath, thumb:base_url + "/" + imagePath, title:"Little Prodigy Books"})
         })
-        
-        console.log("Flipbook pages array:", arr);
-        console.log("Total pages:", arr.length);
-        
-        if(arr.length === 0) {
-            console.error("No pages found! Check if images exist in the #pages div");
-            console.error("Book path:", bookPath);
-            console.error("Category:", $("#category").val());
-        }
            
         $("#container").flipBook({
             pages:arr,

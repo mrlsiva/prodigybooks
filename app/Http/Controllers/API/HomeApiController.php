@@ -236,12 +236,45 @@ class HomeApiController extends BaseController
         $getBook = DB::table($getTable->series_table_name)->where('sku', $sku)->first();
 
         $getBook->thumb_img = 'https://littleprodigybooks.in/storage/app/public/uploads/img/'.$getTable->series_table_name.'/thumb/'.$getBook->thumb_img;
-        $dirname = storage_path('app/public/uploads/book/'.$getBook->book_path);
-        $images = glob($dirname."/*.jpg");
+        
+        // Try category-based folder structure first, then fallback to old structure
+        $book_dir = str_replace('.pdf', '', $getBook->book_path);
+        $possible_dirs = [
+            storage_path('app/public/uploads/book/'.$getTable->series_table_name.'/'.$book_dir),
+            storage_path('app/public/uploads/book/'.$getTable->series_table_name.'/'.$getBook->book_path),
+            storage_path('app/public/uploads/book/'.$book_dir),
+            storage_path('app/public/uploads/book/'.$getBook->book_path),
+        ];
+        
+        $dirname = null;
+        $images = [];
+        foreach($possible_dirs as $dir) {
+            if(is_dir($dir)) {
+                $dirname = $dir;
+                $images = array_merge(
+                    glob($dirname."/*.jpg"),
+                    glob($dirname."/*.jpeg"),
+                    glob($dirname."/*.JPG"),
+                    glob($dirname."/*.JPEG"),
+                    glob($dirname."/*.png"),
+                    glob($dirname."/*.PNG")
+                );
+                if(count($images) > 0) {
+                    break;
+                }
+            }
+        }
+        
+        natsort($images);
         $res_images = [];
         foreach ($images as $image) {
-            $arr = explode($getBook->book_path.'/', $image);
-            $res_images[] = 'https://littleprodigybooks.in/storage/app/public/uploads/book/'.$getBook->book_path.'/'.$arr[1];
+            $filename = basename($image);
+            // Construct URL based on which directory structure was found
+            if(strpos($dirname, $getTable->series_table_name.'/') !== false) {
+                $res_images[] = 'https://littleprodigybooks.in/storage/app/public/uploads/book/'.$getTable->series_table_name.'/'.$book_dir.'/'.$filename;
+            } else {
+                $res_images[] = 'https://littleprodigybooks.in/storage/app/public/uploads/book/'.$book_dir.'/'.$filename;
+            }
         }
         $data['book'] = $getBook;
         $data['pages_count'] = count($res_images);

@@ -296,22 +296,21 @@ class AdminController extends Controller
         // dd(count($noOfBooks), $id, DB::table('categories')->where('id', $id)->get());
 
         $cat_image = storage_path("app/public/uploads/img/".$cat_table_name->series_table_name);
-        // if(!file_exists($img)){
-        //     mkdir($img);
-        // }
-        // $cat_image = $img."/".$request['db_category'];
-        // if(!file_exists($cat_image)){
-        //     mkdir($cat_image);
-        // }
 
         $thumb = $cat_image.'/thumb';
         if(!file_exists($thumb)){
             mkdir($thumb);
         }
         
-        $book = $cat_image.'/books';
+        // Create category-specific book folder structure
+        $book_base = storage_path("app/public/uploads/book/".$cat_table_name->series_table_name);
+        if(!file_exists($book_base)){
+            mkdir($book_base, 0755, true);
+        }
+        
+        $book = $book_base.'/book_'.$request['sku'];
         if(!file_exists($book)){
-            mkdir($book);
+            mkdir($book, 0755, true);
         }
 
         $cat_img = $request['prod_thumb'];
