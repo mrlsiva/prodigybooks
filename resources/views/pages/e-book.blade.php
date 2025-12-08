@@ -22,22 +22,32 @@ div#pages {
     <?php
     // Keep the full book_path as is (including .pdf if present)
     $book_dir = $book_path;
+    $category = $series_table_name;
     
-    // Try multiple possible directory locations
+    // Try multiple possible directory locations with category folder
     $possible_dirs = [
-        storage_path('app/public/uploads/book/'.$book_dir),
-        storage_path('app/public/uploads/book/'.str_replace('.pdf', '', $book_dir)), // Also try without .pdf
-        public_path('storage/uploads/book/'.$book_dir),
-        public_path('storage/uploads/book/'.str_replace('.pdf', '', $book_dir)),
+        storage_path('app/public/uploads/book/'.$category.'/'.$book_dir),
+        storage_path('app/public/uploads/book/'.$category.'/'.str_replace('.pdf', '', $book_dir)),
+        storage_path('app/public/uploads/book/'.$book_dir), // Fallback: old structure without category
+        storage_path('app/public/uploads/book/'.str_replace('.pdf', '', $book_dir)),
+        public_path('storage/uploads/book/'.$category.'/'.$book_dir),
+        public_path('storage/uploads/book/'.$category.'/'.str_replace('.pdf', '', $book_dir)),
     ];
     
     $dirname = null;
     $images = [];
+    $found_category_path = null;
     
     // Find the first directory that exists
     foreach($possible_dirs as $dir) {
         if(is_dir($dir)) {
             $dirname = $dir;
+            
+            // Check if this path includes the category folder
+            if(strpos($dir, $category.'/') !== false) {
+                $found_category_path = $category;
+            }
+            
             // Try multiple image formats
             $images = array_merge(
                 glob($dirname."/*.jpg"),
@@ -71,9 +81,13 @@ div#pages {
     $url_book_dir = str_replace('.pdf', '', $book_dir);
     
     foreach($images as $image) {
-        // Output full storage path: storage/app/public/uploads/book/book_415/0001.jpg
+        // Output path with category if found, otherwise old structure
         $filename = basename($image);
-        echo '<span>storage/app/public/uploads/book/'.$url_book_dir.'/'.$filename.'</span>';
+        if($found_category_path) {
+            echo '<span>storage/app/public/uploads/book/'.$found_category_path.'/'.$url_book_dir.'/'.$filename.'</span>';
+        } else {
+            echo '<span>storage/app/public/uploads/book/'.$url_book_dir.'/'.$filename.'</span>';
+        }
     }
     ?>
 </div>
