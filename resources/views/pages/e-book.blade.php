@@ -42,7 +42,7 @@ document.oncontextmenu =new Function("return false;")
            
             var splitImg = getImg.split('.pdf/');
 
-            arr.push({src:base_url + "/storage/app/public/uploads/book/" + $("#book").val()+"/"+splitImg[1], thumb:base_url + "/storage/app/public/uploads/book/" + $("#book").val()+"/"+splitImg[1], title:"Little Prodigy Books"})
+            arr.push({src:base_url + "/storage/uploads/book/" + $("#book").val()+"/"+splitImg[1], thumb:base_url + "/storage/uploads/book/" + $("#book").val()+"/"+splitImg[1], title:"Little Prodigy Books"})
         })
            
         $("#container").flipBook({
