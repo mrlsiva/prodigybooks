@@ -20,7 +20,9 @@ div#pages {
     <div id="pages">
       
     <?php
-    $dirname = storage_path('app/public/uploads/book/'.$book_path);
+    // Remove .pdf extension if present to get the directory name
+    $book_dir = str_replace('.pdf', '', $book_path);
+    $dirname = storage_path('app/public/uploads/book/'.$book_dir);
     
     // Try multiple image formats
     $images = array_merge(
@@ -52,6 +54,9 @@ document.oncontextmenu =new Function("return false;")
     $(document).ready(function () {
         var base_url = "{{url('/')}}";
         
+        // Remove .pdf extension from book path to get directory name
+        var bookDir = $("#book").val().replace('.pdf', '');
+        
         // Debug: Check what's in the pages div
         console.log("Pages div HTML:", $('#pages').html());
         console.log("Span count:", $('#pages span').length);
@@ -67,7 +72,7 @@ document.oncontextmenu =new Function("return false;")
             
             console.log("Extracted filename:", filename);
 
-            arr.push({src:base_url + "/storage/uploads/book/" + $("#book").val()+"/"+filename, thumb:base_url + "/storage/uploads/book/" + $("#book").val()+"/"+filename, title:"Little Prodigy Books"})
+            arr.push({src:base_url + "/storage/uploads/book/" + bookDir + "/" + filename, thumb:base_url + "/storage/uploads/book/" + bookDir + "/" + filename, title:"Little Prodigy Books"})
         })
         
         console.log("Flipbook pages array:", arr);
@@ -76,6 +81,7 @@ document.oncontextmenu =new Function("return false;")
         if(arr.length === 0) {
             console.error("No pages found! Check if images exist in the #pages div");
             console.error("Book path:", $("#book").val());
+            console.error("Book directory:", bookDir);
             console.error("Category:", $("#category").val());
         }
            
