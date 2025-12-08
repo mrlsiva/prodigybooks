@@ -22,26 +22,50 @@ div#pages {
     <?php
     // Remove .pdf extension if present to get the directory name
     $book_dir = str_replace('.pdf', '', $book_path);
-    $dirname = storage_path('app/public/uploads/book/'.$book_dir);
     
-    // Try multiple image formats
-    $images = array_merge(
-        glob($dirname."/*.jpg"),
-        glob($dirname."/*.jpeg"),
-        glob($dirname."/*.JPG"),
-        glob($dirname."/*.JPEG")
-    );
+    // Try multiple possible directory locations
+    $possible_dirs = [
+        storage_path('app/public/uploads/book/'.$book_dir),
+        storage_path('app/public/uploads/book/'.basename($book_dir)), // Just filename without path
+        public_path('storage/uploads/book/'.$book_dir),
+        public_path('storage/uploads/book/'.basename($book_dir)),
+    ];
+    
+    $dirname = null;
+    $images = [];
+    
+    // Find the first directory that exists
+    foreach($possible_dirs as $dir) {
+        if(is_dir($dir)) {
+            $dirname = $dir;
+            // Try multiple image formats
+            $images = array_merge(
+                glob($dirname."/*.jpg"),
+                glob($dirname."/*.jpeg"),
+                glob($dirname."/*.JPG"),
+                glob($dirname."/*.JPEG"),
+                glob($dirname."/*.png"),
+                glob($dirname."/*.PNG")
+            );
+            
+            if(count($images) > 0) {
+                break; // Found images, stop searching
+            }
+        }
+    }
     
     // Sort images naturally (1, 2, 3... instead of 1, 10, 11, 2...)
-    natsort($images);
-    
-    // Debug: Check if directory and images exist
-    if (!is_dir($dirname)) {
-        echo '<!-- Directory not found: ' . $dirname . ' -->';
-    } else {
-        echo '<!-- Directory found: ' . $dirname . ' -->';
-        echo '<!-- Images found: ' . count($images) . ' -->';
+    if(count($images) > 0) {
+        natsort($images);
     }
+    
+    // Debug: Show all attempted directories and result
+    echo '<!-- Attempted directories: -->';
+    foreach($possible_dirs as $dir) {
+        echo '<!-- ' . $dir . ' - ' . (is_dir($dir) ? 'EXISTS' : 'NOT FOUND') . ' -->';
+    }
+    echo '<!-- Selected directory: ' . ($dirname ?? 'NONE') . ' -->';
+    echo '<!-- Images found: ' . count($images) . ' -->';
     
     foreach($images as $image) {
         echo '<span>'.$image.'</span>';
